@@ -4,62 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="node_modules/angular/angular.js"></script>
-    <!-- <script src="script.js"></script> -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div ng-controller="InvoiceCnt">
+        <h3>数据双向绑定练习</h3>
         <input type="integer" ng-model="qty">
         <input type="number" ng-model="cost">
         <p>sum:{{qty * cost|currency:'￥'}}</p>
         <!-- 指令的练习 -->
+        <h3>指令的练习</h3>
         <span draggable>Drag Me</span>
+        <!-- 作用域练习 -->
+        <h3>作用域练习</h3>
+        <div ng-controller="GreetCtrl">Hello {{name}}</div>
+        <div ng-controller="ListCtrl">
+            <ol>
+                <li ng-repeat="name in names">{{name}}</li>
+            </ol>
+        </div>
     </div>
 </body>
-<script>
-var angularPractice = angular.module('angularPractice', []);
-
-angularPractice.controller('InvoiceCnt', function($scope) {
-    $scope.qty = 1;
-    $scope.cost = 203435.23;
-});
-
-angularPractice.directive('draggable', function($document) {
-    var startX = 0,
-        startY = 0,
-        x = 0,
-        y = 0;
-    return function(scope, element, attr) {
-        element.css({
-            position: 'relative',
-            border: '1px solid red',
-            backgroundColor: 'lightgray',
-            cursor: 'pointer'
-        });
-        element.bind('mousedown', function(event) {
-            startX = event.screenX - x;
-            startY = event.screenY - y;
-            $document.bind('mousemove', mousemove);
-            $document.bind('mouseup', mouseup);
-        });
-
-        function mousemove(event) {
-            y = event.screenY - startY;
-            x = event.screenX - startX;
-            element.css({
-                top: y + 'px',
-                left: x + 'px'
-            });
-            console.log(event.screenX,event.screenY,x,y,startX,startY);
-        }
-
-        function mouseup(event) {
-            $document.unbind('mousemove', mousemove);
-            $document.unbind('mouseup', mouseup);
-        }
-    }
-});
-</script>
+<script src="node_modules/angular/angular.js"></script>
+<script src="js/controller.js"></script>
 
 </html>
