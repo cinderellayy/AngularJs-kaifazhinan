@@ -18,7 +18,11 @@
         <span draggable>Drag Me</span>
         <!-- 作用域练习 -->
         <h3>作用域练习</h3>
-        <div ng-controller="GreetCtrl">Hello {{name}}</div>
+        <div ng-controller="GreetCtrl">Hello {{name}}
+            <!-- 控制器练习 -->
+            <button ng-click="action()"> OK
+            </button>
+        </div>
         <div ng-controller="ListCtrl">
             <ol>
                 <li ng-repeat="name in names">{{name}}</li>
