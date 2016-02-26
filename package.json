@@ -1,0 +1,25 @@
+{
+  "name": "yuying",
+  "version": "1.0.0",
+  "description": "开发指南学习",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cinderellayy/AngularJs-kaifazhinan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cinderellayy/AngularJs-kaifazhinan/issues"
+  },
+   "dependencies": {
+    "angular": "^1.5.0",
+    "angular-mocks": "^1.5.0",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.0"
+  },
+  "homepage": "https://github.com/cinderellayy/AngularJs-kaifazhinan#readme"
+}

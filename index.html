@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularPractice">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="node_modules/angular/angular.js"></script>
+    <!-- <script src="script.js"></script> -->
+</head>
+
+<body>
+    <div ng-controller="InvoiceCnt">
+        <input type="integer" ng-model="qty">
+        <input type="number" ng-model="cost">
+        <p>sum:{{qty * cost|currency:'￥'}}</p>
+    </div>
+</body>
+<script>
+var angularPractice = angular.module('angularPractice', []);
+
+angularPractice.controller('InvoiceCnt', function($scope) {
+    $scope.qty = 1;
+    $scope.cost = 203435.23;
+})
+</script>
+
+</html>
