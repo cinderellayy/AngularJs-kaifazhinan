@@ -8,26 +8,10 @@
 </head>
 
 <body>
-    <div ng-controller="InvoiceCnt">
-        <h3>数据双向绑定练习</h3>
-        <input type="integer" ng-model="qty">
-        <input type="number" ng-model="cost">
-        <p>sum:{{qty * cost|currency:'￥'}}</p>
-        <!-- 指令的练习 -->
-        <h3>指令的练习</h3>
-        <span draggable>Drag Me</span>
-        <!-- 作用域练习 -->
-        <h3>作用域练习</h3>
-        <div ng-controller="GreetCtrl">Hello {{name}}
-            <!-- 控制器练习 -->
-            <button ng-click="action()"> OK
-            </button>
-        </div>
-        <div ng-controller="ListCtrl">
-            <ol>
-                <li ng-repeat="name in names">{{name}}</li>
-            </ol>
-        </div>
+    <div ng-controller="CtrlDirective">
+        Date format:
+        <input ng-model="format" readonly="true">
+        <hr/> Current time is: <span my-current-time="format"></span>
     </div>
 </body>
 <script src="node_modules/angular/angular.js"></script>
